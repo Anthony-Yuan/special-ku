@@ -1,0 +1,13 @@
+#include<stdio.h>
+void main(){
+	int a[11];
+
+int i;
+for(i=2;i<10;i++)
+{a[0]=1;
+ a[1]=1;
+	a[i]=a[i-1]+a[i-2];
+}
+for(i=0;i<10;i++){
+	printf("%d\n",a[i]);}
+}
