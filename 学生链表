@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<malloc.h>
+#define LEN sizeof(struct student)
+struct student{
+char num[6];
+char name[5];
+int age;
+struct student *next;
+}stu[8];
+
+void mian(){
+struct student *p,*pt,*head;
+int i,length,iage,flag=1;
+while(flag == 1)
+{printf(" input length of list(<8):");
+scanf("%d",&length);
+if(length<8)
+flag=0;
+}
+for(i=0;i<length;i++)
+{p=(struct student *) malloc(LEN);
+if(i==0)
+head=pt=p;
+else
+pt->next=p;
+pt=p;
+printf("No.:");
+scanf("%s",p->num);
+printf("name.:");
+scanf("%s",p->name);
+printf("age:");
+scanf("%d",&p->age);
+}
+p->next=NULL;
+p=head;
+printf("\n no.    name  age\n");
+while(p!=NULL)
+{printf("%4s%5s%6d\n",p->num,p->name,p->age);
+p=p->next;
+}
+}
